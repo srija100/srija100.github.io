@@ -1,9 +1,9 @@
-body,html{height:100%;width:100%;font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;color:#000000}
+body,html{height:100%;width:100%;font-family:'Source Sans Pro',Helvetica,Arial,sans-serif;color:#000000}
 img{max-width:100%}
 a:link,a:visited{outline:0}
 a:active,a:hover{text-decoration:underline;}
 a img{border:0}
-h1,h2,h3,h4,h5,h6{font-family: Oxygen,sans-serif;font-weight:800}
+h1,h2,h3,h4,h5,h6{font-family:Oxygen,sans-serif;font-weight:800}
 .navbar{width:100%}
 .navbar-default{
 	background: rgba(255,255,255,.85);
@@ -104,7 +104,7 @@ h1,h2,h3,h4,h5,h6{font-family: Oxygen,sans-serif;font-weight:800}
 .familyio-modal .close-modal .lr{
 	z-index:1051;
 	width:1px;
-	height:55px;
+	height:75px;
 	margin-left:35px;
 	background-color:#222;
 	-webkit-transform:rotate(45deg);
@@ -113,7 +113,7 @@ h1,h2,h3,h4,h5,h6{font-family: Oxygen,sans-serif;font-weight:800}
 .familyio-modal .close-modal .lr .rl{
 	z-index:1052;
 	width:1px;
-	height:55px;
+	height:75px;
 	background-color:#222;-
 	-webkit-transform:rotate(90deg);
 	-ms-transform:rotate(90deg);
