@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+  background: linear-gradient(90deg,#00FFFF,#227df0 );
+}
+h1,p{
+  text-align: center;
+  font-family: serif;
+}
+input {
+  width: 50%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+input[type=submit] {
+  width:10%;
+  background-color: #4CAF50;
+  color: white;
+}
+.container {
+  background: linear-gradient(90deg, #ec84d4,  #9013a6);
+  padding: 20px;
+  width: 45%;
+  height: 35%;
+  position: absolute;
+  left: 26%;
+  }
+#message {
+  display:none;
+  background: pink;
+  color: #000
+  padding: 20px;
+  margin-top: 300px;
+  width: 45%;
+  position: absolute;
+  left: 26%;
+  height: 48%
+}
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+  text-align: center;
+}
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "*"
+}
+
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "#";
+}
+</style>
+</head>
+<body>
+
+<h1><b>Login in, to see exicitng work!!!</b></h1>
+<p >Welcome!</p>
+
+<div class="container">
+  <form action="index.html" style="text-align: center;" >
+    <label for="usrname">Username</label>
+    <input type="text" id="usrname" name="usrname" required><br>
+
+    <label for="psw">Password</label>
+    <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  required><br>
+    <input type="submit" value="Login" class="btn" onClick="login()" />
+  </form>
+</div>
+
+<div id="message">
+  <h3 style="text-align: center;">Password must contain the following:</h3>
+  <p id="letter"  class="invalid">A <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">A <b>uppercase</b> letter</p>
+  <p id="number"  class="invalid">A <b>number</b></p>
+  <p id="length"  class="invalid">Minimum <b>8 characters</b></p>
+</div> 
+
+<script>
+var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {  
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+  
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {  
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {  
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+  
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+</script>
+
+</body>
+</html>
